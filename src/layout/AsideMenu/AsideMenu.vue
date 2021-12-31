@@ -11,6 +11,10 @@
         router
     >
         <MenuItem :menuList="menuList" :collapse="isCollapse" :courseID="courseID"></MenuItem>
+
+        <router-link to="/login" class="el-button">
+            Login
+        </router-link>
     </el-menu>
 </template>
 
@@ -222,7 +226,6 @@ let menuList = reactive([
     },
 ]);
 </script>
-
 
 <style>
 </style>

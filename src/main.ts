@@ -1,10 +1,12 @@
-import { createApp } from 'vue'
+import { createApp} from 'vue'
 import App from './App.vue'
 import router from './router'
 import { store,key } from './store'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as Icons from '@element-plus/icons-vue'
+import axios from 'axios'
+import Vue from 'vue'
 
 const app = createApp(App);
 

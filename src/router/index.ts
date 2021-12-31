@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Index from '@/layout/Index.vue'
 import CourseLayout from '@/layout/CourseLayout.vue';
+import LoginUser from '@/views/LoginUser.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -145,6 +146,11 @@ const routes: Array<RouteRecordRaw> = [
             }
         ]
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginUser
+    }
 ]
 
 const router = createRouter({
