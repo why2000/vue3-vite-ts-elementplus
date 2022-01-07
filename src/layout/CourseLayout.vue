@@ -34,7 +34,7 @@ let courseID: number = 0;
         border-right: none;
     }
     .main{
-        background-color: #ffffff;
+        background-color: #F5F7FB;
     }
 }
 </style>
