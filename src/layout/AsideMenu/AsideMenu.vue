@@ -3,7 +3,7 @@
     <el-menu
         :default-active="activeIndex"
         class="el-menu-vertical-demo"
-        background-color="#304156"
+        background-color="#F5F6F7"
         :collapse="isCollapse"
         @open="handleOpen"
         @close="handleClose"
@@ -12,8 +12,8 @@
     >
         <MenuItem :menuList="menuList" :collapse="isCollapse" :courseID="courseID"></MenuItem>
 
-        <router-link to="/login" class="el-button">
-            Login
+        <router-link to="/login" class="login">
+            <el-button  type="Default">Login</el-button>
         </router-link>
     </el-menu>
 </template>
@@ -24,6 +24,7 @@ import { reactive, computed } from 'vue'
 import { useRoute } from 'vue-router';
 import { useStore } from '@/store'
 import MenuItem from './MenuItem.vue';
+import MenuLogo from './MenuLogo.vue'
 
 defineProps(['courseID'])
 
@@ -47,7 +48,6 @@ const handleOpen = (key: string | number, keyPath: string) => {
 const handleClose = (key: string | number, keyPath: string) => {
     console.log(key, keyPath)
 }
-
 
 //菜单数据
 let menuList = reactive([
@@ -227,5 +227,9 @@ let menuList = reactive([
 ]);
 </script>
 
-<style>
+<style lang="scss">
+.login {
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
 </style>

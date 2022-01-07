@@ -18,7 +18,8 @@ const routes: Array<RouteRecordRaw> = [
             }
           }
         ]
-      },
+    },
+
     {
         path: "/courseHome",
         component: CourseLayout,

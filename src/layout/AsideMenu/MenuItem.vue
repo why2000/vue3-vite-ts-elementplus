@@ -28,7 +28,7 @@ defineProps(['menuList','collapse','courseID'])
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 210px;
     min-height: 400px;
-     height:100%;
+    height:90%;
 }
 
 .el-menu--collapse {
@@ -36,26 +36,29 @@ defineProps(['menuList','collapse','courseID'])
 }
   
 .el-sub-menu .el-sub-menu__title {
-    color: #f4f4f5 !important;
+    color: #444551 !important;
 }
-.el-submenu .is-active .el-submenu__title {
-    border-bottom-color: #1890ff;
+.el-submenu.is-active .el-submenu__title {
+    border-bottom-color: #e6ecf8;
+    background-color: #e6ecf8;
 }
+
 .el-menu .el-menu-item {
-    color: #f4f4f5;
+    color: #444551;
 }
 
 /* 菜单点中文字的颜色 */
 .el-menu-item.is-active {
-    color: #409eff !important;
+    color: #3370FF !important;
+    background-color: #e6ecf8!important;
 }
 /* 当前打开菜单的所有子菜单颜色 */
 .is-opened .el-menu-item {
-    background-color: #1f2d3d !important;
+    background-color: #F5F6F7 !important;
 }
 /* 鼠标移动菜单的颜色 */
 .el-menu-item:hover {
-    background-color: #001528 !important;
+    background-color: #e6ecf8 !important;
 }
 .icon {
     width: 18px;

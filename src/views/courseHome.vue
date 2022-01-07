@@ -1,19 +1,23 @@
 <template>
   <div class="courses">
-    <CourseCard v-for="course in courses" :key="course.id" :course="course"></CourseCard>
+    <CourseCard :courses="courses"></CourseCard>
+    <InfoCard></InfoCard>
   </div>
 </template>
 
 <script lang="ts">
-import CourseCard from '@/components/CourseCard.vue'
-import CourseService from '@/services/CourseService'
+import CourseCard from '@/views/CourseCard.vue'
+import InfoCard from '@/components/InfoCard.vue'
+import CourseService from '@/services/CourseService.vue'
+import InfoCard from '@/components/InfoCard.vue'
 
 export default {
-  name: 'courseHome',
+  name: 'CourseHome',
   courses: null,
   components: {
-    CourseCard
-  },
+    CourseCard,
+    InfoCard
+},
   data() {
     return {
       courses:null,
@@ -23,8 +27,8 @@ export default {
   created() {
     CourseService.getCourses()
       .then(response => {
-        this.courses = response.data,
-        console.log('courses:', response.data);
+          this.courses = response.data,
+          console.log('courses:', this.courses);
       })
       .catch(error => {
         console.log(error)
@@ -33,10 +37,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .courses {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
 }
 </style>

@@ -2,7 +2,7 @@
 </template>
 
 <script lang="ts">
-import CourseService from '@/services/CourseService'
+import CourseService from '@/services/CourseService.vue'
 
 export default {
   name: 'LoginUser',

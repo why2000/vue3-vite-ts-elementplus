@@ -1,14 +1,14 @@
 <template>
     <div class="logo">
-        <img src="https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png" alt="logo" />
-        <span class="title">Vue3+TypeScript实战</span>
+        <img src="@/assets/Techboom.jpg" alt="logo" />
+        <span class="title">Tech Boom</span>
     </div>
 </template>
 <script setup lang="ts">
 </script>
 <style lang="scss" scoped>
 .logo {
-    width: 210px;
+    width: 190px;
     background-color: #2b2f3a;
     height: 10%;
     border: none;
@@ -19,8 +19,8 @@
     padding-left: 19px;
     color: #fff;
     img {
-        width: 32px;
-        height: 32px;
+        width: 64px;
+        height: 64px;
         margin-right: 12px;
     }
     span {
