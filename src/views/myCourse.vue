@@ -1,13 +1,19 @@
 <template>
   <div class="courses">
-    <CourseCard :courses="courses"></CourseCard>
-    <InfoCard></InfoCard>
+    <div class="courseArea">
+      <CourseCard class="courseCard" :courses="courses"></CourseCard>
+    </div>
+    <div class="rightSideArea">
+      <todoCard></todoCard>
+      <infoCard></infoCard>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import CourseCard from '@/views/CourseCard.vue'
-import InfoCard from '@/components/InfoCard.vue'
+import CourseCard from '@/components/CourseCard.vue'
+import todoCard from '@/components/todoCard.vue'
+import infoCard from '@/components/infoCard.vue'
 import CourseService from '@/services/CourseService.vue'
 
 export default {
@@ -15,18 +21,19 @@ export default {
   courses: null,
   components: {
     CourseCard,
-    InfoCard
-},
+    infoCard,
+    todoCard,
+  },
   data() {
     return {
-      courses:null,
+      courses: null,
     }
   },
 
   created() {
     CourseService.getCourses()
       .then(response => {
-          this.courses = response.data,
+        this.courses = response.data,
           console.log('courses:', this.courses);
       })
       .catch(error => {
@@ -38,7 +45,18 @@ export default {
 
 <style lang="scss" scoped>
 .courses {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-areas: "courseArea rightSideArea";
+}
+
+.courseArea {
+  grid-area: courseArea;
   display: flex;
   flex-wrap: wrap;
+}
+
+.rightSideArea {
+  grid-area: rightSideArea;
 }
 </style>
