@@ -33,6 +33,7 @@ const routes: Array<RouteRecordRaw> = [
             }
         ]
     },
+
     {
         path: "/courseHome",
         component: CourseLayout,
@@ -138,9 +139,18 @@ const routes: Array<RouteRecordRaw> = [
         ]
     },
     {
-      path: '/login',
-      name: 'login',
-      component: LoginUser,
+        path: '/login',
+        name: 'login',
+        component: LoginUser,
+        children: [
+            {
+                path:'/login',
+                component: () => import('@/views/login.vue'),
+                meta: {
+                    title: 'login',
+                }
+            }
+        ]
     }
 ]
 

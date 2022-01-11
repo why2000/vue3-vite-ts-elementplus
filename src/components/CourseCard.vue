@@ -21,11 +21,9 @@
 defineProps(['courses'])
 </script>
 
-<style>
+<style scoped>
 .box-card {
-  margin-left: 15px;
-  margin-bottom: 20px;
-  width: 250px;
+  width: auto;
   height: 250px;
 }
 

@@ -25,6 +25,7 @@
 }
 
 .box-card {
+  margin-bottom: 5%;
   width: auto;
   height: 20%;
 }

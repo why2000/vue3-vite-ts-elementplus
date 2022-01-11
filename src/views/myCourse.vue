@@ -46,14 +46,16 @@ export default {
 <style lang="scss" scoped>
 .courses {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr 1.2fr;
   grid-template-areas: "courseArea rightSideArea";
+  grid-gap:5%;
 }
 
 .courseArea {
   grid-area: courseArea;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap:20px;
 }
 
 .rightSideArea {
