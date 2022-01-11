@@ -8,7 +8,9 @@
         </div>
         <div class="bottom">
           <time class="time">{{ course.name }}</time>
+           <router-link to="/courseHome">
           <el-button type="text" class="button">Operating</el-button>
+          </router-link>
         </div>
       </div>
     </el-card>
@@ -19,11 +21,9 @@
 defineProps(['courses'])
 </script>
 
-<style>
+<style scoped>
 .box-card {
-  margin-left: 15px;
-  margin-bottom: 20px;
-  width: 250px;
+  width: auto;
   height: 250px;
 }
 

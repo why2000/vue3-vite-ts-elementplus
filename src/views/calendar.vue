@@ -1,5 +1,5 @@
 <template>
-  <div>修改信息</div>
+  <div>日历</div>
 </template>
 <script setup lang='ts'>
 import { ref,reactive} from 'vue'

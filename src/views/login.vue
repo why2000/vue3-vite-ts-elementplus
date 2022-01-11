@@ -1,5 +1,5 @@
 <template>
-  <div>退出系统</div>
+  <div> 登录成功! </div>
 </template>
 <script setup lang='ts'>
 import { ref,reactive} from 'vue'

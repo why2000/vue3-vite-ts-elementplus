@@ -3,7 +3,7 @@
     <el-menu
         :default-active="activeIndex"
         class="el-menu-vertical-demo"
-        background-color="#F5F6F7"
+        background-color="#274FAE"
         :collapse="isCollapse"
         @open="handleOpen"
         @close="handleClose"
@@ -13,7 +13,7 @@
         <MenuItem :menuList="menuList" :collapse="isCollapse" :courseID="courseID"></MenuItem>
 
         <router-link to="/login" class="login">
-            <el-button  type="Default">Login</el-button>
+            <el-button type="primary" :icon="UserFilled" circle></el-button>
         </router-link>
     </el-menu>
 </template>
@@ -24,9 +24,12 @@ import { reactive, computed } from 'vue'
 import { useRoute } from 'vue-router';
 import { useStore } from '@/store'
 import MenuItem from './MenuItem.vue';
-import MenuLogo from './MenuLogo.vue'
+import MenuLogo from './MenuLogo.vue';
+import {
+    UserFilled
+} from '@element-plus/icons-vue'
 
-defineProps(['courseID'])
+defineProps(['courseID', 'isCollapse'])
 
 const store = useStore();
 const route = useRoute();
@@ -36,11 +39,6 @@ const activeIndex = computed(() => {
     const { path } = route;
     return path;
 })
-
-const isCollapse = computed(() => {
-    return store.getters['getCollapse']
-})
-
 
 const handleOpen = (key: string | number, keyPath: string) => {
     console.log(key, keyPath)
@@ -53,89 +51,34 @@ const handleClose = (key: string | number, keyPath: string) => {
 let menuList = reactive([
     {
         path: '/',
-        component: "Layout",
-        id: 0B11111,
         number:2, // number: 2两个界面都显示， 1首页显示，2选择课程显示
         meta: {
             title: "首页",
-            icon: "HomeFilled",
-            roles: ["sys:manage"],
+            icon: "Menu",
+        },
+        children: []
+    },
+    {
+        path: '/myCourse',
+        number:1,
+        meta: {
+            title: "我的课程",
+            icon: "Notebook",
 
         },
         children: []
     },
     {
-        path: '/courseHome',
-        component: "Layout",
-        id: 0B11111,
+        path: "/courseHome",
+        name: "courseHome",
         number:0,
         meta: {
-            title: "课程首页",
-            icon: "Notebook",
-            roles: ["sys:manage"],
-
-        },
-        children: []
-    },
-    {
-        path: "/chooseCourse",
-        component: "Layout",
-        alwaysShow: true,
-        name: "chooseCourse",
-        number:2,
-        meta: {
-            title: "选择课程",
-            icon: "School",
-            roles: ["sys:manage"],
+            title: "课程内容",
+            icon: "Reading",
+            roles: ["sys:goods"],
             parentId: 0,
+
         },
-        children: [
-            {
-                path: "/Python",
-                component: "/system/department/department",
-                alwaysShow: false,
-                name: "Python",
-                Id: 0B11111,
-                number:2,
-                meta: {
-                    title: "Python",
-                    icon: "Reading",
-                    roles: ["sys:dept"],
-                    parentId: 17,
-
-                },
-            },
-            {
-                path: "/Java",
-                component: "/system/User/UserList",
-                alwaysShow: false,
-                name: "Java",
-                id: 0B11111,
-                number:2,
-                meta: {
-                    title: "Java",
-                    icon: "Reading",
-                    roles: ["sys:user"],
-                    parentId: 17,
-
-                },
-            },
-            {
-                path: "/Physics",
-                component: "/system/Role/RoleList",
-                alwaysShow: false,
-                name: "Physics",
-                id: 0B11111,
-                number:2,
-                meta: {
-                    title: "大学物理",
-                    icon: "Reading",
-                    roles: ["sys:role"],
-                    parentId: 17,
-
-                },
-            },
-        ],
     },
     {
         path: "/Video",
@@ -197,31 +140,32 @@ let menuList = reactive([
 
         },
     },
+
     {
-        path: "/information",
-        component: "Layout",
-        alwaysShow: true,
-        name: "information",
-        Id: 0B00001,
+        path: "/calendar",
+        name: "calendar",
         number:1,
         meta: {
-            title: "修改信息",
-            icon: "Avatar",
+            title: "日历",
+            icon: "Calendar",
         },
     },
     {
-        path: "/quit",
-        component: "Layout",
-        alwaysShow: true,
-        name: "quit",
-        Id: 0B00001,
+        path: "/setting",
+        name: "setting",
         number:1,
         meta: {
-            title: "退出系统",
-            icon: "SwitchButton",
-            roles: ["sys:systemConfig"],
-            parentId: 0,
-
+            title: "设置",
+            icon: "Setting",
+        },
+    },
+    {
+        path: "/question",
+        name: "question",
+        number:1,
+        meta: {
+            title: "帮助",
+            icon: "QuestionFilled",
         },
     },
 ]);
@@ -229,7 +173,7 @@ let menuList = reactive([
 
 <style lang="scss">
 .login {
-    margin-left: 20px;
+    margin-left: 8px;
     margin-bottom: 0px;
 }
 </style>

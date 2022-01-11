@@ -2,11 +2,10 @@
   <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <span>待办</span>
+        <span>最近通知</span>
         <el-button class="button" type="text">Operation button</el-button>
       </div>
     </template>
-    <div v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</div>
   </el-card>
 </template>
 
@@ -26,6 +25,8 @@
 }
 
 .box-card {
+  margin-bottom: 5%;
   width: auto;
+  height: 20%;
 }
 </style>

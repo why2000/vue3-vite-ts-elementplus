@@ -1,7 +1,7 @@
 <template>
   <el-container class="layout">
     <el-aside width="auto" class="aside">
-      <AsideMenu :courseID="courseID"></AsideMenu>
+      <AsideMenu :courseID="courseID" :isCollapse="false"></AsideMenu>
     </el-aside>
     <el-container>
       <el-header class="header">
@@ -34,7 +34,7 @@ let courseID: number = 0;
         border-right: none;
     }
     .main{
-        background-color: #ffffff;
+        background-color: #F5F7FB;
     }
 }
 </style>

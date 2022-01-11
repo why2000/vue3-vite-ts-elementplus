@@ -1,5 +1,5 @@
 <template>
-  <div>Java</div>
+  <div> 帮助 </div>
 </template>
 <script setup lang='ts'>
 import { ref,reactive} from 'vue'
