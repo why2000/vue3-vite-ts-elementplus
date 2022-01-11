@@ -1,5 +1,5 @@
 <template>
-  <div> 当前课程内容</div>
+  <div>日历</div>
 </template>
 <script setup lang='ts'>
 import { ref,reactive} from 'vue'

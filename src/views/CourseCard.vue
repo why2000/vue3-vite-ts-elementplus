@@ -8,7 +8,9 @@
         </div>
         <div class="bottom">
           <time class="time">{{ course.name }}</time>
+           <router-link to="/courseHome">
           <el-button type="text" class="button">Operating</el-button>
+          </router-link>
         </div>
       </div>
     </el-card>

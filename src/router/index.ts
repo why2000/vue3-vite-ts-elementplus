@@ -7,12 +7,12 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         component: Index,
-        redirect: '/Home',
+        redirect: '/home',
         children: [
           {
-            path: '/Home',
-            component: () => import('@/views/Home.vue'),
-            name: 'Home',
+            path: '/home',
+            component: () => import('@/views/home.vue'),
+            name: 'home',
             meta: {
               title: '首页',
             }
@@ -21,6 +21,19 @@ const routes: Array<RouteRecordRaw> = [
     },
 
     {
+        path: "/myCourse",
+        component: Index,
+        children: [
+            {
+                path:'/myCourse',
+                component: () => import('@/views/myCourse.vue'),
+                meta: {
+                    title: '我的课程',
+                }
+            }
+        ]
+    },
+    {
         path: "/courseHome",
         component: CourseLayout,
         children: [
@@ -28,46 +41,10 @@ const routes: Array<RouteRecordRaw> = [
                 path:'/courseHome',
                 component: () => import('@/views/courseHome.vue'),
                 meta: {
-                    title: '课程首页',
+                    title: '上传视频',
                 }
             }
         ]
-    },
-
-    {
-
-        path: "/chooseCourse",
-        component: CourseLayout,
-        name: "chooseCourse",
-        meta: {
-            title: "选择课程",
-        },
-        children: [
-            {
-                path: "/Python",
-                component: () => import('@/views/chooseCourse/Python.vue'),
-                name: "Python",
-                meta: {
-                    title: "Python",
-                },
-            },
-            {
-                path: "/Java",
-                component: () => import('@/views/chooseCourse/Java.vue'),
-                name: "Java",
-                meta: {
-                    title: "Java",
-                },
-            },
-            {
-                path: "/Physics",
-                component: () => import('@/views/chooseCourse/Physics.vue'),
-                name: "大学物理",
-                meta: {
-                    title: "Physics",
-                },
-            },
-        ],
     },
     {
         path: "/Video",
@@ -122,27 +99,40 @@ const routes: Array<RouteRecordRaw> = [
         ]
     },
     {
-        path: "/information",
+        path: "/calendar",
         component: Index,
         children: [
             {
-                path:'/information',
-                component: () => import('@/views/Information.vue'),
+                path:'/calendar',
+                component: () => import('@/views/calendar.vue'),
                 meta: {
-                    title: '修改信息',
+                    title: '日历',
                 }
             }
         ]
     },
     {
-        path: "/quit",
+        path: "/setting",
         component: Index,
         children: [
             {
-                path:'/quit',
-                component: () => import('@/views/Quit.vue'),
+                path:'/setting',
+                component: () => import('@/views/setting.vue'),
                 meta: {
-                    title: '退出系统',
+                    title: '设置',
+                }
+            }
+        ]
+    },
+    {
+        path: "/question",
+        component: Index,
+        children: [
+            {
+                path:'/question',
+                component: () => import('@/views/question.vue'),
+                meta: {
+                    title: '帮助',
                 }
             }
         ]
@@ -150,7 +140,7 @@ const routes: Array<RouteRecordRaw> = [
     {
       path: '/login',
       name: 'login',
-      component: LoginUser
+      component: LoginUser,
     }
 ]
 

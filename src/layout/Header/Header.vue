@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Collapse></Collapse>
+        <!-- <Collapse></Collapse> -->
     </div>
 </template>
 <script setup lang="ts">

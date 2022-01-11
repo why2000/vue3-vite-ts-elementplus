@@ -1,7 +1,7 @@
 <template>
   <el-container class="layout">
     <el-aside width="auto" class="aside">
-      <AsideMenu :courseID="courseID"></AsideMenu>
+      <AsideMenu :courseID="courseID" :isCollapse="false"></AsideMenu>
     </el-aside>
     <el-container>
       <el-header class="header">
