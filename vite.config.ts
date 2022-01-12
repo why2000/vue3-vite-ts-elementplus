@@ -12,6 +12,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'http://lms.techbooming.com',
+        // target: 'http://localhost:3000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },

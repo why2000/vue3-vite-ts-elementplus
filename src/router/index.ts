@@ -39,8 +39,10 @@ const routes: Array<RouteRecordRaw> = [
         component: CourseLayout,
         children: [
             {
-                path:'/courseHome',
+                path:'/courseHome/:courseId',
+                name: "courseHome",
                 component: () => import('@/views/courseHome.vue'),
+                props: true,
                 meta: {
                     title: '上传视频',
                 }
