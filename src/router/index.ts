@@ -151,7 +151,20 @@ const routes: Array<RouteRecordRaw> = [
                 }
             }
         ]
-    }
+    },
+    {
+        path: "/profile",
+        component: Index,
+        children: [
+            {
+                path:'/profile',
+                component: () => import('@/views/profile.vue'),
+                meta: {
+                    title: '个人中心',
+                }
+            }
+        ]
+    },
 ]
 
 const router = createRouter({

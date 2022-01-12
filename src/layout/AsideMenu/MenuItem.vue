@@ -26,7 +26,7 @@ defineProps(['menuList','collapse','courseID'])
 
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 210px;
+    width: 140px;
     min-height: 400px;
     height:100%;
 }
@@ -51,6 +51,7 @@ defineProps(['menuList','collapse','courseID'])
 .el-menu-item.is-active {
     color: #274FAE !important;
     background-color: #e6ecf8!important;
+    /* border-radius: 20px; */
 }
 /* 当前打开菜单的所有子菜单颜色 */
 .is-opened .el-menu-item {
@@ -60,6 +61,7 @@ defineProps(['menuList','collapse','courseID'])
 .el-menu-item:hover {
     color: #274FAE;
     background-color: #e6ecf8 !important;
+    /* border-radius: 20px; */
 }
 
 .icon {

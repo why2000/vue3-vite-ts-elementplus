@@ -1,5 +1,5 @@
 <template>
-  <el-card class="box-card">
+  <el-card class="box-card" shadow="never">
     <template #header>
       <div class="card-header">
         <span>待办</span>
@@ -27,5 +27,6 @@
 
 .box-card {
   width: auto;
+  border-radius: 10px;
 }
 </style>

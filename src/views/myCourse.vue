@@ -1,7 +1,12 @@
 <template>
   <div class="courses">
-    <div class="courseArea">
-      <CourseCard class="courseCard" :courses="courses"></CourseCard>
+    <div class="courseArea"> 
+      <CourseCard
+        v-for="course in courses.data"
+        :key="course.id"
+        :course="course"
+        class="courseCard"
+      ></CourseCard>
     </div>
     <div class="rightSideArea">
       <todoCard></todoCard>
@@ -48,14 +53,19 @@ export default {
   display: grid;
   grid-template-columns: 4fr 1.2fr;
   grid-template-areas: "courseArea rightSideArea";
-  grid-gap:5%;
+  grid-gap: 5%;
 }
 
 .courseArea {
   grid-area: courseArea;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap:20px;
+  grid-gap: 15px;
+
+}
+
+.courseCard {
+  display: grid;
 }
 
 .rightSideArea {

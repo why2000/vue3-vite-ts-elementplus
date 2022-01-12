@@ -51,7 +51,7 @@ const handleClose = (key: string | number, keyPath: string) => {
 let menuList = reactive([
     {
         path: '/',
-        number:2, // number: 2两个界面都显示， 1首页显示，2选择课程显示
+        number:2, // number: 2两个界面都显示， 1首页显示，0选择课程显示
         meta: {
             title: "首页",
             icon: "Menu",

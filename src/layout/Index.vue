@@ -27,7 +27,7 @@ let courseID: number = 1;
        background-color: #F5F6F7;
     }
     .header{
-        height: 45px;
+        height: 50px;
         padding: 0 10px;
         display: flex;
         align-items: center;

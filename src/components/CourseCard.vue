@@ -1,30 +1,29 @@
 <template>
-  <template v-for="course in courses.data" :key="course.id">
-    <el-card :body-style="{ padding: '0px' }" class="box-card" shadow="always">
-      <img src="@/assets/CPU.png" class="image" />
-      <div style="padding: 14px">
-        <div class="course-name">
-          <span>{{ course.name }}</span>
-        </div>
-        <div class="bottom">
-          <time class="time">{{ course.name }}</time>
-           <router-link to="/courseHome">
-          <el-button type="text" class="button">Operating</el-button>
-          </router-link>
-        </div>
+  <el-card :body-style="{ padding: '0px' }" class="box-card" shadow="always">
+    <img src="@/assets/CPU.png" class="image" />
+    <div style="padding: 14px">
+      <div class="course-name">
+        <span>{{ course.name }}</span>
       </div>
-    </el-card>
-  </template>
+      <div class="bottom">
+        <time class="time">{{ course.name }}</time>
+        <router-link to="/courseHome">
+          <el-button type="text" class="button">Operating</el-button>
+        </router-link>
+      </div>
+    </div>
+  </el-card>
 </template>
 
 <script setup lang="ts">
-defineProps(['courses'])
+defineProps(['course'])
 </script>
 
 <style scoped>
 .box-card {
   width: auto;
   height: 250px;
+  border-radius: 10px;
 }
 
 .course-name {
@@ -53,5 +52,6 @@ defineProps(['courses'])
 .image {
   width: 100%;
   display: block;
+  
 }
 </style>
