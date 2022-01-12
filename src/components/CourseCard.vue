@@ -1,5 +1,5 @@
 <template>
-  <template v-for="course in courses.data" :key="course.id">
+  <div v-for="course in courses.data" :key="course.id">
     <el-card :body-style="{ padding: '0px' }" class="box-card" shadow="always">
       <img src="@/assets/CPU.png" class="image" />
       <div style="padding: 14px">
@@ -8,13 +8,13 @@
         </div>
         <div class="bottom">
           <time class="time">{{ course.name }}</time>
-           <router-link to="/courseHome">
-          <el-button type="text" class="button">Operating</el-button>
+          <router-link :to="{ name: 'courseHome', params: { courseId: course._id, courseBasicInfo: course.description }}">
+            <el-button type="text" class="button">Operating</el-button>
           </router-link>
         </div>
       </div>
     </el-card>
-  </template>
+  </div>
 </template>
 
 <script setup lang="ts">
