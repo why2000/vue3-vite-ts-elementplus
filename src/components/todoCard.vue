@@ -1,5 +1,5 @@
 <template>
-  <el-card class="box-card">
+  <el-card class="box-card" shadow="never">
     <template #header>
       <div class="card-header">
         <span>最近通知</span>
@@ -28,5 +28,6 @@
   margin-bottom: 5%;
   width: auto;
   height: 20%;
+  border-radius: 10px;
 }
 </style>
