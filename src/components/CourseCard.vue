@@ -1,5 +1,5 @@
 <template>
-  <template v-for="course in courses.data" :key="course.id">
+  <template>
     <el-card :body-style="{ padding: '0px' }" class="box-card" shadow="always">
       <img src="@/assets/CPU.png" class="image" />
       <div style="padding: 14px">
@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps(['courses'])
+defineProps(['course'])
 </script>
 
 <style scoped>
