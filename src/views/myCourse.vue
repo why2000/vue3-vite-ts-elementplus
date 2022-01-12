@@ -19,7 +19,7 @@
 import CourseCard from '@/components/CourseCard.vue'
 import todoCard from '@/components/todoCard.vue'
 import infoCard from '@/components/InfoCard.vue'
-import CourseService from '@/services/CourseService'
+import CourseService from '@/services/CourseService.vue'
 
 export default {
   name: 'myCourse',

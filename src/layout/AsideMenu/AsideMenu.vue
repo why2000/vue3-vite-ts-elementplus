@@ -1,5 +1,4 @@
 <template>
-    <!-- <MenuLogo></MenuLogo> -->
     <el-menu
         :default-active="activeIndex"
         class="el-menu-vertical-demo"
@@ -24,7 +23,7 @@ import { reactive, computed } from 'vue'
 import { useRoute } from 'vue-router';
 import { useStore } from '@/store'
 import MenuItem from './MenuItem.vue';
-import MenuLogo from './MenuLogo.vue';
+
 import {
     UserFilled
 } from '@element-plus/icons-vue'

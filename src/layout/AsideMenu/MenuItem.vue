@@ -27,12 +27,11 @@ defineProps(['menuList','collapse','courseID'])
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 140px;
-    min-height: 400px;
-    height:100%;
+    height:90%;
 }
 
 .el-menu--collapse {
-  height: 100%;
+  height: 90%;
 }
   
 .el-sub-menu .el-sub-menu__title {

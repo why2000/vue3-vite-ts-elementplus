@@ -1,6 +1,7 @@
 <template>
   <el-container class="layout">
     <el-aside width="auto" class="aside">
+      <MenuLogo></MenuLogo>
       <AsideMenu :courseID="courseID" :isCollapse="true"></AsideMenu>
     </el-aside>
     <el-container>
@@ -17,6 +18,7 @@
 <script setup lang="ts">
 import AsideMenu from './AsideMenu/AsideMenu.vue'
 import Header from './Header/Header.vue'
+import MenuLogo from './Logo/IndexLogo.vue'
 let courseID: number = 1;
 </script>
 
