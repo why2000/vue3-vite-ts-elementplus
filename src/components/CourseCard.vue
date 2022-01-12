@@ -22,7 +22,7 @@ defineProps(['course'])
 <style scoped>
 .box-card {
   width: auto;
-  height: 250px;
+  height: auto;
   border-radius: 10px;
 }
 
