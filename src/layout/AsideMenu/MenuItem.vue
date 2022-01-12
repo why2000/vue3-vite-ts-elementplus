@@ -66,7 +66,7 @@ defineProps(['menuList','collapse','courseID'])
 .icon {
     width: 18px;
     height: 18px;
-    margin-right: 5px;
+    margin-right: 8px;
 }
 .icon_collapse {
     width: 18px;
