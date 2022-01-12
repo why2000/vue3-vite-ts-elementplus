@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps(['course'])
+defineProps(['courses'])
 </script>
 
 <style scoped>
