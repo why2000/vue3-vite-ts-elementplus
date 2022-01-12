@@ -2,8 +2,8 @@
   <div class="courses">
     <div class="courseArea"> 
       <CourseCard
-        v-for="course in courses.data"
-        :key="course.id"
+        v-for="course in courses"
+        :key="course._id"
         :course="course"
         class="courseCard"
       ></CourseCard>
@@ -16,14 +16,14 @@
 </template>
 
 <script lang="ts">
+import { defineComponent, ref } from 'vue'
 import CourseCard from '@/components/CourseCard.vue'
 import todoCard from '@/components/todoCard.vue'
 import infoCard from '@/components/InfoCard.vue'
 import CourseService from '@/services/CourseService.vue'
 
-export default {
+export default defineComponent({
   name: 'myCourse',
-  courses: null,
   components: {
     CourseCard,
     infoCard,
@@ -31,20 +31,29 @@ export default {
   },
   data() {
     return {
-      courses: null,
+      courses: {} as any,
     }
   },
   created() {
     CourseService.getCourses()
       .then(response => {
-        this.courses = response.data;
-        console.log('courses:', this.courses);
+        //这里后台为什么需要两层status和data？
+        let responseBody = response.data
+        console.log('response received: *' + responseBody.status + '*\n' + responseBody.data)
+
+        //todo: change later
+        if (responseBody.status != 200) {
+          alert('Error: cannot load courses (inner status code is not 200)');
+        } else {
+          this.courses = responseBody.data;
+          console.log('successfully fetched courses:', this.courses);
+        }
       })
       .catch(error => {
-        console.log(error)
+        console.log('Error occurred: ', error)
       })
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
