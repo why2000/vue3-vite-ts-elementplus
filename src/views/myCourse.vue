@@ -18,8 +18,8 @@
 <script lang="ts">
 import CourseCard from '@/components/CourseCard.vue'
 import todoCard from '@/components/todoCard.vue'
-import infoCard from '@/components/infoCard.vue'
-import CourseService from '@/services/CourseService.vue'
+import infoCard from '@/components/InfoCard.vue'
+import CourseService from '@/services/CourseService'
 
 export default {
   name: 'myCourse',
@@ -34,12 +34,11 @@ export default {
       courses: null,
     }
   },
-
   created() {
     CourseService.getCourses()
       .then(response => {
-        this.courses = response.data,
-          console.log('courses:', this.courses);
+        this.courses = response.data;
+        console.log('courses:', this.courses);
       })
       .catch(error => {
         console.log(error)

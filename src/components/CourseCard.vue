@@ -7,7 +7,7 @@
       </div>
       <div class="bottom">
         <time class="time">{{ course.name }}</time>
-        <router-link to="/courseHome">
+        <router-link :to="{ name: 'courseHome', params: { courseId: course._id, courseBasicInfo: course.description }}">
           <el-button type="text" class="button">Operating</el-button>
         </router-link>
       </div>
@@ -22,7 +22,7 @@ defineProps(['course'])
 <style scoped>
 .box-card {
   width: auto;
-  height: 250px;
+  height: auto;
   border-radius: 10px;
 }
 
